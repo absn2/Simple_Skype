@@ -107,4 +107,8 @@ public class gui {
         textArea1.append("Bem-Vindo ao ZapGram! \n");
         textArea1.append("# Primeiramente digite seu nome de usuário! # \n\n");
     }
+
+    private void createUIComponents() {
+
+    }
 }
