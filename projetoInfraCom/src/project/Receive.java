@@ -10,10 +10,13 @@ import java.net.Socket;
 
     public class Receive extends Thread {
         private DatagramSocket clientSocket;
+        private String userName;
+        private boolean firstMessage;
         private gui graphicGui;
 
         public Receive(DatagramSocket clientSocket, gui graphicGui) throws IOException {
             this.clientSocket = clientSocket;
+            this.firstMessage = true;
             this.graphicGui = graphicGui;
         }
 
@@ -25,12 +28,15 @@ import java.net.Socket;
                     this.clientSocket.receive(receivePacket);
                     String msg = new String(receivePacket.getData());
                     msg = msg.trim();
-                    if (clientSocket.getLocalPort() == 8888) {
-                        System.out.println("B: " + msg);
-                        graphicGui.print("B",msg);
+                    if (firstMessage) {
+                        this.userName = msg;
+                        firstMessage = false;
+                        System.out.println("O usuário " + this.userName +", acabou de se conectar com você seja gentil!");
+                        graphicGui.printConnect(this.userName);
+
                     } else {
-                        System.out.println("A: " + msg);
-                        graphicGui.print("A",msg);
+                        System.out.println(this.userName + ": " + msg);
+                        graphicGui.print(this.userName, msg);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
