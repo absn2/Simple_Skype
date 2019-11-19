@@ -2,16 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce9e44f-5d02-4a8b-8fba-19797110c662" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/Client.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/project/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/CircularBuffer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Client1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Client2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/MicPlayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/MicRecord.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/TestMic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/CircularBuffer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/Client1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/Client2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/MicPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/MicRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/Receive.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/Receive.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/TestMic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/server.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/gui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="80" column="29" lean-forward="true" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
+            <state relative-caret-position="457">
+              <caret line="71" column="63" selection-start-line="71" selection-start-column="63" selection-end-line="71" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="32" selection-end-column="1" />
+            <state relative-caret-position="143">
+              <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/Receive.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+            <state relative-caret-position="203">
+              <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,10 +74,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/server.java">
+        <entry file="file://$PROJECT_DIR$/src/project/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+            <state relative-caret-position="90">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,7 +102,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/gui.java" />
         <option value="$PROJECT_DIR$/src/Receive.java" />
-        <option value="$PROJECT_DIR$/src/project/server.java" />
         <option value="$PROJECT_DIR$/src/project/TestMic.java" />
         <option value="$PROJECT_DIR$/src/project/App.java" />
         <option value="$PROJECT_DIR$/src/project/CircularBuffer.java" />
@@ -107,6 +113,7 @@
         <option value="$PROJECT_DIR$/src/project/Client1.java" />
         <option value="$PROJECT_DIR$/src/project/gui.java" />
         <option value="$PROJECT_DIR$/src/project/Client.java" />
+        <option value="$PROJECT_DIR$/src/project/server.java" />
       </list>
     </option>
   </component>
@@ -181,7 +188,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client2">
+  <component name="RunManager" selected="Application.Client1">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="project.App" />
       <module name="projetoInfraCom" />
@@ -249,8 +256,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client2" />
         <item itemvalue="Application.Client1" />
+        <item itemvalue="Application.Client2" />
         <item itemvalue="Application.server" />
         <item itemvalue="Application.TestMic" />
         <item itemvalue="Application.App" />
@@ -267,12 +274,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573486705730</updated>
-      <workItem from="1574186074196" duration="1464000" />
+      <workItem from="1574186074196" duration="3040000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1464000" />
+    <option name="totallyTimeSpent" value="3040000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -298,7 +305,7 @@
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32937366" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32891247" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -391,9 +398,6 @@
       </provider>
     </entry>
     <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/jdk.net/jdk/net/ExtendedSocketOptions.class" />
-    <entry file="file://$PROJECT_DIR$/src/project/gui.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/CircularBuffer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -411,30 +415,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/gui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="80" column="29" lean-forward="true" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/project/gui.form">
+      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/Receive.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        <state relative-caret-position="203">
+          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/server.java">
+    <entry file="file://$PROJECT_DIR$/src/project/gui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        <state relative-caret-position="457">
+          <caret line="71" column="63" selection-start-line="71" selection-start-column="63" selection-end-line="71" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -443,8 +450,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="32" selection-end-column="1" />
+        <state relative-caret-position="143">
+          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
