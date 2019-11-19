@@ -14,7 +14,7 @@ public class gui {
     private boolean firstMessage;
     private int port;
 
-    public gui(int port, DatagramSocket socket) {
+    public gui(int port, DatagramSocket socket, String ip) {
         this.port = port;
         this.firstMessage = true;
         textArea1.setEditable(false);
@@ -35,7 +35,7 @@ public class gui {
                         textField1.setText("");
                         firstMessage = false;
                         try {
-                            InetAddress IPServer = InetAddress.getByName("localhost");
+                            InetAddress IPServer = InetAddress.getByName(ip);
                             String msg = userName;
                             byte[] sendData = msg.getBytes();
                             DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPServer, port);
@@ -45,7 +45,7 @@ public class gui {
                         }
                     } else {
                         try {
-                            InetAddress IPServer = InetAddress.getByName("localhost");
+                            InetAddress IPServer = InetAddress.getByName(ip);
                             String msg = textField1.getText();
                             byte[] sendData = msg.getBytes();
                             DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPServer, port);
@@ -69,7 +69,7 @@ public class gui {
                         textField1.setText("");
                         firstMessage = false;
                         try {
-                            InetAddress IPServer = InetAddress.getByName("localhost");
+                            InetAddress IPServer = InetAddress.getByName(ip);
                             String msg = userName;
                             byte[] sendData = msg.getBytes();
                             DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPServer, port);
@@ -79,7 +79,7 @@ public class gui {
                         }
                     } else {
                         try {
-                            InetAddress IPServer = InetAddress.getByName("localhost");
+                            InetAddress IPServer = InetAddress.getByName(ip);
                             String msg = textField1.getText();
                             byte[] sendData = msg.getBytes();
                             DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPServer, port);
@@ -106,9 +106,5 @@ public class gui {
     public void init() {
         textArea1.append("Bem-Vindo ao ZapGram! \n");
         textArea1.append("# Primeiramente digite seu nome de usuário! # \n\n");
-    }
-
-    private void createUIComponents() {
-
     }
 }
