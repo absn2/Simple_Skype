@@ -26,7 +26,18 @@ public class Client {
         DatagramSocket clientSocket = new DatagramSocket(8888);
         gui graphicUi = new gui(clientIP, clientPort, clientSocket);
         graphicUi.init();
+
         Thread receive = new Receive(clientSocket, graphicUi);
         receive.start();
+
+        // MANDA E RECEBE AUDIO
+
+        RTPPacket pacoteRTP = new RTPPacket();
+
+        Thread sendAudio = new sendAudio(pacoteRTP, InetAddress.getByName(clientIP), clientPort);
+        sendAudio.start();
+
+        Thread receiveAudio = new ReceiveAudio(pacoteRTP);
+        receiveAudio.start();
     }
 }
