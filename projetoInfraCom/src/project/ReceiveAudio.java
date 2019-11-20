@@ -18,7 +18,9 @@ public class ReceiveAudio extends Thread {
 
     public void run() {
         try {
-            this.pacote.receber();
+            while (true) {
+                this.pacote.receber();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

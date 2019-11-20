@@ -34,7 +34,7 @@ public class Client {
 
         RTPPacket pacoteRTP = new RTPPacket();
 
-        Thread sendAudio = new sendAudio(pacoteRTP, InetAddress.getByName(clientIP), clientPort);
+        Thread sendAudio = new sendAudio(pacoteRTP, InetAddress.getByName(clientIP), clientPort+1);
         sendAudio.start();
 
         Thread receiveAudio = new ReceiveAudio(pacoteRTP);

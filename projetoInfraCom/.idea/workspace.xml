@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc49152f-6b56-4883-a665-56d449cc6816" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/project/RTP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project/RTPPacket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project/ReceiveAudio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project/sendAudio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/RTPPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/RTPPacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/ReceiveAudio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/ReceiveAudio.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="39" column="58" selection-start-line="39" selection-start-column="58" selection-end-line="39" selection-end-column="58" />
+            <state relative-caret-position="321">
+              <caret line="39" column="56" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -37,8 +33,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/sendAudio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="39" column="29" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="29" />
+            <state relative-caret-position="294">
+              <caret line="41" column="26" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -46,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/ReceiveAudio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+            <state relative-caret-position="185">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -55,11 +51,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/RTPPacket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="31" column="19" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="19" />
+            <state relative-caret-position="323">
+              <caret line="40" column="36" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="36" />
               <folding>
-                <element signature="e#1214#1215#0" expanded="true" />
-                <element signature="e#1243#1244#0" expanded="true" />
+                <element signature="e#1450#1451#0" expanded="true" />
+                <element signature="e#1479#1480#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,12 +79,12 @@
         <option value="$PROJECT_DIR$/src/RTPPacket.java" />
         <option value="$PROJECT_DIR$/src/project/RTP.java" />
         <option value="$PROJECT_DIR$/src/project/gui.java" />
-        <option value="$PROJECT_DIR$/src/project/RTPPacket.java" />
         <option value="$PROJECT_DIR$/src/project/Receive.java" />
         <option value="$PROJECT_DIR$/src/project/gui.form" />
-        <option value="$PROJECT_DIR$/src/project/ReceiveAudio.java" />
         <option value="$PROJECT_DIR$/src/project/Client.java" />
+        <option value="$PROJECT_DIR$/src/project/RTPPacket.java" />
         <option value="$PROJECT_DIR$/src/project/sendAudio.java" />
+        <option value="$PROJECT_DIR$/src/project/ReceiveAudio.java" />
       </list>
     </option>
   </component>
@@ -207,7 +203,7 @@
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.32974428" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.32974428" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -247,35 +243,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/ReceiveAudio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="39" column="58" selection-start-line="39" selection-start-column="58" selection-end-line="39" selection-end-column="58" />
+        <state relative-caret-position="321">
+          <caret line="39" column="56" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/RTPPacket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="31" column="19" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="19" />
+        <state relative-caret-position="323">
+          <caret line="40" column="36" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="36" />
           <folding>
-            <element signature="e#1214#1215#0" expanded="true" />
-            <element signature="e#1243#1244#0" expanded="true" />
+            <element signature="e#1450#1451#0" expanded="true" />
+            <element signature="e#1479#1480#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/ReceiveAudio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/sendAudio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="29" />
+        <state relative-caret-position="294">
+          <caret line="41" column="26" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
         </state>
       </provider>
     </entry>

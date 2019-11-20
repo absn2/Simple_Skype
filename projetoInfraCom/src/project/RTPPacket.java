@@ -29,7 +29,10 @@ public class RTPPacket {
     public byte[] receber() throws IOException {
         byte[] receivedData = new byte[1024];
         DatagramPacket receivedPacket = new DatagramPacket(receivedData, receivedData.length);
-        this.socket.receive(receivedPacket);
+
+        if(this.socket != null) {
+            this.socket.receive(receivedPacket);
+        }
 
         byte[] RTPPacket = receivedPacket.getData();
 
