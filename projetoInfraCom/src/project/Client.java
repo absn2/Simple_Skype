@@ -13,7 +13,7 @@ public class Client {
 
     public static void main(String[] args) throws IOException {
         int port = 8888;
-        String servidorIP = "172.20.4.85";
+        String servidorIP = "172.20.4.30";
         InetAddress adress = InetAddress.getByName(servidorIP);
         Socket socket = new Socket(adress, port); // inicia conexão com servidor
         DataInputStream entrada = new DataInputStream(socket.getInputStream()); // pega mensagem do servidor
@@ -24,7 +24,7 @@ public class Client {
         System.out.println("IP do Outro Client: " + clientIP);
 
         DatagramSocket clientSocket = new DatagramSocket(8888);
-        gui graphicUi = new gui(clientPort, clientSocket, clientIP);
+        gui graphicUi = new gui(clientIP, clientPort, clientSocket);
         graphicUi.init();
         Thread receive = new Receive(clientSocket, graphicUi);
         receive.start();
