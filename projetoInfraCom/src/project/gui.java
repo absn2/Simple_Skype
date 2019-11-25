@@ -45,6 +45,12 @@ public class gui {
             public void actionPerformed(ActionEvent e) {
                 if (textField1.getText().length() > 0) {
                     filaDeEnvio.add(textField1.getText());
+                    if (firstMessage) {
+                        textArea1.append("Bem-vindo usúario " + textField1.getText() + "! \n");
+                        firstMessage = false;
+                    } else {
+                        textArea1.append("Você: " + textField1.getText() + "\n");
+                    }
                     textField1.setText("");
                 }
             }
@@ -59,46 +65,6 @@ public class gui {
             }
         });
     }
-
-   /* public void sendClient (String msg) {
-        if (firstMessage) {
-            this.textArea1.append("Bem-vindo usúario " + msg + "! \n");
-            this.textField1.setText("");
-        }
-        try {
-            InetAddress IPServer = InetAddress.getByName(ip);
-            byte[] sendData = msg.getBytes();
-
-            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPServer, port);
-            this.socket.send(sendPacket);
-
-            if (!this.firstMessage) {
-                textArea1.append("Você: " + msg + "\n");
-                System.out.println("Você: " + msg);
-                textField1.setText("");
-            } else {
-                this.firstMessage = false;
-            }
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }*/
-
-   /* public void sendMessage(String msg){
-            if (this.clientOff || this.ip.equals("0")) {
-                msgOff.add(msg);
-                this.textField1.setText("");
-            } else {
-                int index = 0;
-                while (!msgOff.isEmpty()) {
-                    sendClient(msgOff.get(index));
-                    msgOff.remove(index);
-                    index++;
-                }
-                sendClient(msg);
-            }
-    }*/
 
     public void setInterface(){
         textArea1.setEditable(false);
