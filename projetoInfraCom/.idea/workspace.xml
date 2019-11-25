@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc49152f-6b56-4883-a665-56d449cc6816" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/project/client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project/server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/META-INF/projetoInfraCom.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/RTPPacket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/RTPPacket.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/Receive.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/Receive.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/ReceiveAudio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/ReceiveAudio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/gui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/sendAudio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/sendAudio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projetoInfraCom/project/server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projetoInfraCom/project/server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="105">
+              <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,13 +32,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/gui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="764">
-              <caret line="102" column="32" lean-forward="true" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
+            <state relative-caret-position="659">
+              <caret line="72" column="49" selection-start-line="72" selection-start-column="49" selection-end-line="72" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3032#3033#0" expanded="true" />
-                <element signature="e#3097#3098#0" expanded="true" />
+                <element signature="e#3129#3130#0" expanded="true" />
+                <element signature="e#3194#3195#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/Receive.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -272,20 +266,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="32" column="90" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Receive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/lang/Thread.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2489">
@@ -307,24 +287,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="32" column="90" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="105">
+          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Receive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/gui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="764">
-          <caret line="102" column="32" lean-forward="true" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
+        <state relative-caret-position="659">
+          <caret line="72" column="49" selection-start-line="72" selection-start-column="49" selection-end-line="72" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3032#3033#0" expanded="true" />
-            <element signature="e#3097#3098#0" expanded="true" />
+            <element signature="e#3129#3130#0" expanded="true" />
+            <element signature="e#3194#3195#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -14,14 +14,13 @@ public class client {
         int port = 8888;
         String servidorIP = "172.20.4.165";
         InetAddress adress = InetAddress.getByName(servidorIP);
-        DatagramSocket clientSocket = new DatagramSocket(8888); // msgs do cliente
+        DatagramSocket clientSocket = new DatagramSocket(8088); // msgs do cliente
         DatagramSocket statuSocket = new DatagramSocket(8008); // msgs de status
         Socket socket = new Socket(adress, port); // inicia conexão com servidor
         gui graphicUi = new gui (clientSocket);
-
         DataInputStream entrada = new DataInputStream(socket.getInputStream()); // pega mensagem do servidor
-        String [] info = entrada.readUTF().split(":");
-        String clientIP = info[0];
+        String info = entrada.readUTF();
+        String clientIP = info;
         System.out.println("IP do Outro client: " + clientIP);
         graphicUi.setIp(clientIP);
         graphicUi.init();

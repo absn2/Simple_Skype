@@ -30,7 +30,7 @@ public class gui {
 
     public gui(DatagramSocket socket) {
         this.ip = "0";
-        this.port = 8888;
+        this.port = 8088;
         this.socket = socket;
         this.clientOff = false;
         this.msgOff = new ArrayList<String>();
@@ -70,6 +70,7 @@ public class gui {
 
             if (!this.firstMessage) {
                 textArea1.append("Você: " + msg + "\n");
+                System.out.println("Você: " + msg);
                 textField1.setText("");
             } else {
                 this.firstMessage = false;
@@ -83,6 +84,7 @@ public class gui {
     public void sendMessage(String msg){
             if (this.clientOff || this.ip.equals("0")) {
                 msgOff.add(msg);
+                this.textField1.setText("");
             } else {
                 int index = 0;
                 while (!msgOff.isEmpty()) {
