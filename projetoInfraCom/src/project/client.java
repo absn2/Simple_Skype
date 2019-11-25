@@ -92,13 +92,29 @@ class EnviarMensagem extends Thread{
                     } else {
                         firstMessage = false;
                     }
-
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
             }
-           // if(!firstMessage)
-              //  GUI.textField1.setText("");
+
+            while(GUI.clientOff && !GUI.filaDeEnvio.isEmpty()) {
+                String msg = GUI.filaDeEnvio.remove();
+                try {
+                    InetAddress IPServer = InetAddress.getByName(this.IP);
+                    byte[] sendData = msg.getBytes();
+
+                    DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPServer, 8088);
+                    this.socket.send(sendPacket);
+                    if (!firstMessage) {
+                        System.out.println("Você: " + msg);
+                    } else {
+                        firstMessage = false;
+                    }
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+            
         }
     }
 }
