@@ -16,17 +16,23 @@ public class client {
         InetAddress adress = InetAddress.getByName(servidorIP);
         DatagramSocket clientSocket = new DatagramSocket(8088); // msgs do cliente
         DatagramSocket statuSocket = new DatagramSocket(8008); // msgs de status
+
         Socket socket = new Socket(adress, port); // inicia conexão com servidor
         gui graphicUi = new gui (clientSocket);
+
         DataInputStream entrada = new DataInputStream(socket.getInputStream()); // pega mensagem do servidor
+
         String info = entrada.readUTF();
         String clientIP = info;
+
         System.out.println("IP do Outro client: " + clientIP);
         graphicUi.setIp(clientIP);
         graphicUi.init();
+
         Thread receive = new Receive(clientSocket, graphicUi);
         Thread status = new Status(statuSocket, graphicUi);
         Thread envio = new EnviarMensagem(clientIP, graphicUi, clientSocket);
+
         receive.start();
         status.start();
         envio.start();
@@ -73,6 +79,7 @@ class EnviarMensagem extends Thread{
         boolean firstMessage = true;
 
         while (true) {
+            //System.out.println(GUI.clientOff);
             while(!GUI.clientOff && !GUI.filaDeEnvio.isEmpty()) {
                 String msg = GUI.filaDeEnvio.remove();
                 if (firstMessage) {
