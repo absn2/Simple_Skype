@@ -5,12 +5,13 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 
+
 public class Server {
 
     public static void main(String[] args) {
         int port = 8888;
         try {
-            System.out.println("waiting for client");
+            System.out.println("Waiting ");
             ServerSocket tmpSocket = new ServerSocket(port);
 
             System.out.println("c1");

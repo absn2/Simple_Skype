@@ -5,6 +5,8 @@ import javax.xml.crypto.Data;
 import java.awt.event.*;
 import java.beans.PropertyChangeListener;
 import java.net.*;
+import java.util.ArrayList;
+
 
 public class gui {
 
@@ -17,26 +19,30 @@ public class gui {
     // LOGICA
     private String userName;
     private boolean firstMessage;
+    private boolean clientOff;
 
     // INFORMACOES
     private String ip;
     private DatagramSocket socket;
+    private ArrayList<String> msgOff;
     private int port;
 
 
-    public gui(String ip, int port, DatagramSocket socket) {
-        this.port = port;
-        this.ip = ip;
+    public gui(DatagramSocket socket) {
+        this.ip = "0";
+        this.port = 8888;
         this.socket = socket;
-
+        this.clientOff = false;
+        this.msgOff = new ArrayList<String>();
         this.firstMessage = true;
+
 
         setInterface();
 
         enviarButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (textField1.getText().length() > 0) {
-                    sendMessage();
+                    sendMessage(textField1.getText());
                 }
             }
         });
@@ -44,26 +50,17 @@ public class gui {
         textField1.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode()==KeyEvent.VK_ENTER && textField1.getText().length() > 0) {
-                    sendMessage();
+                    sendMessage(textField1.getText());
                 }
             }
         });
     }
 
-    public void sendMessage(){
-        String msg = "";
-
+    public void sendClient (String msg) {
         if (firstMessage) {
-            this.userName = textField1.getText();
-            this.textArea1.append("Bem-vindo usúario " + userName + "! \n");
+            this.textArea1.append("Bem-vindo usúario " + msg + "! \n");
             this.textField1.setText("");
-
-            msg = userName;
         }
-        else{
-            msg = textField1.getText();
-        }
-
         try {
             InetAddress IPServer = InetAddress.getByName(ip);
             byte[] sendData = msg.getBytes();
@@ -74,14 +71,27 @@ public class gui {
             if (!this.firstMessage) {
                 textArea1.append("Você: " + msg + "\n");
                 textField1.setText("");
-            }
-            else{
+            } else {
                 this.firstMessage = false;
             }
 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+
+    public void sendMessage(String msg){
+            if (this.clientOff || this.ip.equals("0")) {
+                msgOff.add(msg);
+            } else {
+                int index = 0;
+                while (!msgOff.isEmpty()) {
+                    sendClient(msgOff.get(index));
+                    msgOff.remove(index);
+                    index++;
+                }
+                sendClient(msg);
+            }
     }
 
     public void setInterface(){
@@ -99,6 +109,10 @@ public class gui {
         textArea1.append(user + ": " + msg + "\n");
     }
 
+    public void setIp (String ip) {
+        this.ip = ip;
+    }
+
     public void printConnect (String user) {
         textArea1.append("O usuário --->" + user +"<--- acabou de se conectar com você seja gentil!\n");
     }
@@ -106,5 +120,13 @@ public class gui {
     public void init() {
         textArea1.append("Bem-Vindo ao ZapGram! \n");
         textArea1.append("# Primeiramente digite seu nome de usuário! # \n\n");
+    }
+
+    public void setClientOff(String msg) {
+        if (msg.equals("OFF")) {
+            clientOff = false;
+        } else {
+            clientOff = true;
+        }
     }
 }
