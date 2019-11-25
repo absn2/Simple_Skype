@@ -73,28 +73,30 @@ class EnviarMensagem extends Thread{
         boolean firstMessage = true;
 
         while (true) {
-            String msg = GUI.filaDeEnvio.remove();
-            if (firstMessage) {
-                GUI.textArea1.append("Bem-vindo usúario " + msg + "! \n");
-                GUI.textField1.setText("");
-            }
-            try {
-                InetAddress IPServer = InetAddress.getByName(this.IP);
-                byte[] sendData = msg.getBytes();
-
-                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPServer, 8088);
-                this.socket.send(sendPacket);
-
-                if (!firstMessage) {
-                    GUI.textArea1.append("Você: " + msg + "\n");
-                    System.out.println("Você: " + msg);
+            while(!GUI.clientOff && !GUI.filaDeEnvio.isEmpty()) {
+                String msg = GUI.filaDeEnvio.remove();
+                if (firstMessage) {
+                    GUI.textArea1.append("Bem-vindo usúario " + msg + "! \n");
                     GUI.textField1.setText("");
-                } else {
-                    firstMessage = false;
                 }
+                try {
+                    InetAddress IPServer = InetAddress.getByName(this.IP);
+                    byte[] sendData = msg.getBytes();
 
-            } catch (Exception ex) {
-                ex.printStackTrace();
+                    DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPServer, 8088);
+                    this.socket.send(sendPacket);
+
+                    if (!firstMessage) {
+                        GUI.textArea1.append("Você: " + msg + "\n");
+                        System.out.println("Você: " + msg);
+                        GUI.textField1.setText("");
+                    } else {
+                        firstMessage = false;
+                    }
+
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
             }
         }
     }
