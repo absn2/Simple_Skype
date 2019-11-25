@@ -45,6 +45,7 @@ public class gui {
             public void actionPerformed(ActionEvent e) {
                 if (textField1.getText().length() > 0) {
                     filaDeEnvio.add(textField1.getText());
+                    textField1.setText("");
                 }
             }
         });
@@ -53,6 +54,7 @@ public class gui {
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode()==KeyEvent.VK_ENTER && textField1.getText().length() > 0) {
                     filaDeEnvio.add(textField1.getText());
+                    textField1.setText("");
                 }
             }
         });

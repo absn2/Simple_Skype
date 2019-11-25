@@ -79,12 +79,12 @@ class EnviarMensagem extends Thread{
         boolean firstMessage = true;
 
         while (true) {
-            //System.out.println(GUI.clientOff);
+            System.out.println(GUI.clientOff);
             while(!GUI.clientOff && !GUI.filaDeEnvio.isEmpty()) {
                 String msg = GUI.filaDeEnvio.remove();
                 if (firstMessage) {
                     GUI.textArea1.append("Bem-vindo usúario " + msg + "! \n");
-                    GUI.textField1.setText("");
+                    //GUI.textField1.setText("");
                 }
                 try {
                     InetAddress IPServer = InetAddress.getByName(this.IP);
@@ -96,7 +96,7 @@ class EnviarMensagem extends Thread{
                     if (!firstMessage) {
                         GUI.textArea1.append("Você: " + msg + "\n");
                         System.out.println("Você: " + msg);
-                        GUI.textField1.setText("");
+                        //GUI.textField1.setText("");
                     } else {
                         firstMessage = false;
                     }
@@ -105,6 +105,8 @@ class EnviarMensagem extends Thread{
                     ex.printStackTrace();
                 }
             }
+           // if(!firstMessage)
+              //  GUI.textField1.setText("");
         }
     }
 }
