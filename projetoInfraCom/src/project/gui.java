@@ -6,34 +6,36 @@ import java.awt.event.*;
 import java.beans.PropertyChangeListener;
 import java.net.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 
 public class gui {
 
     // INTERFACE
-    private JTextArea textArea1;
-    private JPanel panel1;
-    private JTextField textField1;
-    private JButton enviarButton;
+    public JTextArea textArea1;
+    public JPanel panel1;
+    public JTextField textField1;
+    public JButton enviarButton;
 
     // LOGICA
-    private String userName;
-    private boolean firstMessage;
-    private boolean clientOff;
+    public String userName;
+    public boolean firstMessage;
+    public boolean clientOff;
 
     // INFORMACOES
-    private String ip;
-    private DatagramSocket socket;
-    private ArrayList<String> msgOff;
-    private int port;
+    public String ip;
+    public DatagramSocket socket;
+    public Queue<String> filaDeEnvio;
+    public int port;
 
 
     public gui(DatagramSocket socket) {
         this.ip = "0";
         this.port = 8088;
         this.socket = socket;
-        this.clientOff = false;
-        this.msgOff = new ArrayList<String>();
+        this.clientOff = true;
+        this.filaDeEnvio = new LinkedList<>();
         this.firstMessage = true;
 
 
@@ -42,7 +44,7 @@ public class gui {
         enviarButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (textField1.getText().length() > 0) {
-                    sendMessage(textField1.getText());
+                    filaDeEnvio.add(textField1.getText());
                 }
             }
         });
@@ -50,13 +52,13 @@ public class gui {
         textField1.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode()==KeyEvent.VK_ENTER && textField1.getText().length() > 0) {
-                    sendMessage(textField1.getText());
+                    filaDeEnvio.add(textField1.getText());
                 }
             }
         });
     }
 
-    public void sendClient (String msg) {
+   /* public void sendClient (String msg) {
         if (firstMessage) {
             this.textArea1.append("Bem-vindo usúario " + msg + "! \n");
             this.textField1.setText("");
@@ -79,9 +81,9 @@ public class gui {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-    }
+    }*/
 
-    public void sendMessage(String msg){
+   /* public void sendMessage(String msg){
             if (this.clientOff || this.ip.equals("0")) {
                 msgOff.add(msg);
                 this.textField1.setText("");
@@ -94,7 +96,7 @@ public class gui {
                 }
                 sendClient(msg);
             }
-    }
+    }*/
 
     public void setInterface(){
         textArea1.setEditable(false);
@@ -126,9 +128,9 @@ public class gui {
 
     public void setClientOff(String msg) {
         if (msg.equals("OFF")) {
-            clientOff = false;
-        } else {
             clientOff = true;
+        } else {
+            clientOff = false;
         }
     }
 }

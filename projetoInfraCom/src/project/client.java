@@ -26,8 +26,10 @@ public class client {
         graphicUi.init();
         Thread receive = new Receive(clientSocket, graphicUi);
         Thread status = new Status(statuSocket, graphicUi);
+        Thread envio = new EnviarMensagem(clientIP, graphicUi, clientSocket);
         receive.start();
         status.start();
+        envio.start();
     }
 }
 
@@ -37,7 +39,7 @@ class Status extends Thread {
 
     public Status(DatagramSocket statuSocket, gui graphicUi) {
         this.statuSocket = statuSocket;
-        this.graphicGui = graphicGui;
+        this.graphicGui = graphicUi;
     }
 
     public void run() {
@@ -52,6 +54,48 @@ class Status extends Thread {
             }
         } catch (Exception e) {
             System.out.println("Error: " + e);
+        }
+    }
+}
+
+class EnviarMensagem extends Thread{
+    private String IP;
+    private gui GUI;
+    private DatagramSocket socket;
+
+    public EnviarMensagem(String ip, gui lherme, DatagramSocket skt){
+        this.IP = ip;
+        this.GUI = lherme;
+        this.socket = skt;
+    }
+
+    public void run() {
+        boolean firstMessage = true;
+
+        while (true) {
+            String msg = GUI.filaDeEnvio.remove();
+            if (firstMessage) {
+                GUI.textArea1.append("Bem-vindo usúario " + msg + "! \n");
+                GUI.textField1.setText("");
+            }
+            try {
+                InetAddress IPServer = InetAddress.getByName(this.IP);
+                byte[] sendData = msg.getBytes();
+
+                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPServer, 8088);
+                this.socket.send(sendPacket);
+
+                if (!firstMessage) {
+                    GUI.textArea1.append("Você: " + msg + "\n");
+                    System.out.println("Você: " + msg);
+                    GUI.textField1.setText("");
+                } else {
+                    firstMessage = false;
+                }
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
     }
 }
