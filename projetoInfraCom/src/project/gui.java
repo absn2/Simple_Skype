@@ -11,12 +11,13 @@ import java.util.Queue;
 
 
 public class gui {
-
     // INTERFACE
     public JTextArea textArea1;
     public JPanel panel1;
     public JTextField textField1;
     public JButton enviarButton;
+    private JTextArea statusCliente;
+    private JTextArea IPdoOutro;
 
     // LOGICA
     public String userName;
@@ -38,32 +39,33 @@ public class gui {
         this.filaDeEnvio = new LinkedList<>();
         this.firstMessage = true;
 
-
         setInterface();
 
         enviarButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (textField1.getText().length() > 0) {
-                    filaDeEnvio.add(textField1.getText());
-                    if (firstMessage) {
-                        textArea1.append("Bem-vindo usúario " + textField1.getText() + "! \n");
-                        firstMessage = false;
-                    } else {
-                        textArea1.append("Você: " + textField1.getText() + "\n");
-                    }
-                    textField1.setText("");
-                }
+                enviarMsg();
             }
         });
 
         textField1.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode()==KeyEvent.VK_ENTER && textField1.getText().length() > 0) {
-                    filaDeEnvio.add(textField1.getText());
-                    textField1.setText("");
-                }
+            if (e.getKeyCode()==KeyEvent.VK_ENTER && textField1.getText().length() > 0) {
+                enviarMsg();
+            }
             }
         });
+    }
+    public void enviarMsg(){
+        if (textField1.getText().length() > 0) {
+            filaDeEnvio.add(textField1.getText());
+            if (firstMessage) {
+                textArea1.append("Bem-vindo usúario " + textField1.getText() + "! \n");
+                firstMessage = false;
+            } else {
+                textArea1.append("Você: " + textField1.getText() + "\n");
+            }
+            textField1.setText("");
+        }
     }
 
     public void setInterface(){
@@ -78,11 +80,12 @@ public class gui {
     }
 
     public void print (String user, String msg) {
-        textArea1.append(user + ": " + msg + "\n");
+        this.textArea1.append(user + ": " + msg + "\n");
     }
 
     public void setIp (String ip) {
         this.ip = ip;
+        this.IPdoOutro.setText(ip);
     }
 
     public void printConnect (String user) {
@@ -97,8 +100,10 @@ public class gui {
     public void setClientOff(String msg) {
         if (msg.equals("OFF")) {
             clientOff = true;
+            this.statusCliente.setText("O outro cliente esta Offline");
         } else {
             clientOff = false;
+            this.statusCliente.setText("O outro cliente esta Online");
         }
     }
 }

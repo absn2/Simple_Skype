@@ -12,7 +12,7 @@ public class client {
     public static void main(String[] args) throws IOException {
 
         int port = 8888;
-        String servidorIP = "172.20.4.165";
+        String servidorIP = "G1C12";
         InetAddress adress = InetAddress.getByName(servidorIP);
         DatagramSocket clientSocket = new DatagramSocket(8088); // msgs do cliente
         DatagramSocket statuSocket = new DatagramSocket(8008); // msgs de status
@@ -69,16 +69,16 @@ class EnviarMensagem extends Thread{
     private gui GUI;
     private DatagramSocket socket;
 
-    public EnviarMensagem(String ip, gui lherme, DatagramSocket skt){
+    public EnviarMensagem(String ip, gui gg, DatagramSocket skt){
         this.IP = ip;
-        this.GUI = lherme;
+        this.GUI = gg;
         this.socket = skt;
     }
 
     public void run() {
         boolean firstMessage = true;
         while (true) {
-            System.out.println(GUI.clientOff);
+            //System.out.println(GUI.clientOff);
             while(!GUI.clientOff && !GUI.filaDeEnvio.isEmpty()) {
                 String msg = GUI.filaDeEnvio.remove();
                 try {
@@ -87,6 +87,7 @@ class EnviarMensagem extends Thread{
 
                     DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPServer, 8088);
                     this.socket.send(sendPacket);
+                    this.GUI.textArea1.append("Você: " + msg);
                     if (!firstMessage) {
                         System.out.println("Você: " + msg);
                     } else {
@@ -96,25 +97,44 @@ class EnviarMensagem extends Thread{
                     ex.printStackTrace();
                 }
             }
+        }
+    }
+}
 
-            while(GUI.clientOff && !GUI.filaDeEnvio.isEmpty()) {
-                String msg = GUI.filaDeEnvio.remove();
-                try {
-                    InetAddress IPServer = InetAddress.getByName(this.IP);
-                    byte[] sendData = msg.getBytes();
+class Receive extends Thread {
+    private DatagramSocket clientSocket;
+    private String userName;
+    private boolean firstMessage;
+    private gui graphicGui;
 
-                    DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPServer, 8088);
-                    this.socket.send(sendPacket);
-                    if (!firstMessage) {
-                        System.out.println("Você: " + msg);
-                    } else {
-                        firstMessage = false;
-                    }
-                } catch (Exception ex) {
-                    ex.printStackTrace();
+    public Receive(DatagramSocket clientSocket, gui graphicGui) throws IOException {
+        this.clientSocket = clientSocket;
+        this.firstMessage = true;
+        this.graphicGui = graphicGui;
+    }
+
+    public void run() {
+        while (true) {
+            byte[] receiveData = new byte[1024];
+            DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+            try {
+                this.clientSocket.receive(receivePacket);
+                String msg = new String(receivePacket.getData());
+                msg = msg.trim();
+                if (firstMessage) {
+                    this.userName = msg;
+                    firstMessage = false;
+                    //System.out.println("O usuário " + this.userName +", acabou de se conectar com você seja gentil!");
+                    graphicGui.printConnect(this.userName);
+                    graphicGui.textArea1.append("O usuário " + this.userName +", acabou de se conectar com você seja gentil!");
+                } else {
+                    System.out.println(this.userName + ": " + msg);
+                    graphicGui.print(this.userName, msg);
+                    graphicGui.textArea1.append(this.userName + ": " + msg);
                 }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-
         }
     }
 }
